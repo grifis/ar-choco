@@ -1,6 +1,6 @@
 import html2canvas from "html2canvas";
 
-export default function Marker({ href, src, children }) {
+export default function Marker({ src, children, toUrl }) {
     const saveAsImage = (uri) => {
         const downloadLink = document.createElement("a");
 
@@ -24,12 +24,7 @@ export default function Marker({ href, src, children }) {
     };
 
     const onClickExport = () => {
-        // 画像に変換する component の id を指定
-        const target = document.getElementById(src);
-        html2canvas(target).then((canvas) => {
-            const targetImgUri = canvas.toDataURL("img/png");
-            saveAsImage(targetImgUri);
-        });
+        location = toUrl;
     };
     return (
         <div class="text-center w-1/3 sm:mx-16 mx-auto my-16">

@@ -88,6 +88,7 @@ const CreateLetter = React.forwardRef((props, ref) => {
                             onChange={(e) => {
                                 setData("body", e.target.value);
                             }}
+                            autoFocus
                             className={
                                 selectedTemplate ===
                                 "images/letter_template/chocolate.png"

@@ -36,11 +36,13 @@ const Show = (props) => {
             <CoppyBox>{message}</CoppyBox>
             <div className="sm:flex sm:justify-center text-center">
                 <Marker
-                    href={`/QR/${letter.id}.svg`}
                     src={`/QR/${letter.id}.svg`}
+                    toUrl={`https://ar-choco-heroku.herokuapp.com/valentine/${letter.id}`}
                 >
                     QRコードはこちら
-                    <DownloadButton href={`/QR/${letter.id}.svg`} />
+                    <DownloadButton
+                        href={`https://chart.apis.google.com/chart?chs=500x500&cht=qr&chl=https://ar-choco-heroku.herokuapp.com/valentine/${letter.id}`}
+                    />
                 </Marker>
                 <Marker href={`/pattern-ar.png`} src={`/pattern-ar.png`}>
                     ARマーカーはこちら
