@@ -10,7 +10,13 @@ const Show = (props) => {
     const { letter } = props;
     const message =
         "チョコが届きました！\n下記urlでカメラを起動してmeijiのアーモンドチョコかARマーカーにかざしてみてね!\n" +
-        location.href;
+        (
+            <a
+                href={`https://ar-choco-heroku.herokuapp.com/valentine/${letter.id}`}
+            >
+                https://ar-choco-heroku.herokuapp.com/valentine/${letter.id}
+            </a>
+        );
     return (
         <div className="text-center flex flex-col justify-center">
             <Head>

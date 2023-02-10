@@ -28,8 +28,14 @@ export default function Marker({ src, children, toUrl }) {
     };
     return (
         <div class="text-center w-1/3 sm:mx-16 mx-auto my-16">
-            <div onClick={() => onClickExport()} id={src}>
-                <img src={src} width="300" height="150" className="mx-auto" />
+            <div id={src}>
+                <img
+                    onClick={() => onClickExport()}
+                    src={src}
+                    width="300"
+                    height="150"
+                    className="mx-auto"
+                />
             </div>
             <p className="mt-4 text-xl font-bold text-stone-600">{children}</p>
         </div>
