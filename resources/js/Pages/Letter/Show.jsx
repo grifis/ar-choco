@@ -9,14 +9,8 @@ import ChocoButton from "@/Components/ChocoButton";
 const Show = (props) => {
     const { letter } = props;
     const message =
-        "チョコが届きました！\n下記urlでカメラを起動してmeijiのアーモンドチョコかARマーカーにかざしてみてね!\n" +
-        (
-            <a
-                href={`https://ar-choco-heroku.herokuapp.com/valentine/${letter.id}`}
-            >
-                https://ar-choco-heroku.herokuapp.com/valentine/${letter.id}
-            </a>
-        );
+        "チョコが届きました！\n下記urlでカメラを起動してmeijiのアーモンドチョコかARマーカーにかざしてみてね!";
+    const messageUrl = `https://ar-choco-heroku.herokuapp.com/valentine/${letter.id}`;
     return (
         <div className="text-center flex flex-col justify-center">
             <Head>
@@ -39,7 +33,7 @@ const Show = (props) => {
             <p className="mx-auto w-3/4 mt-20 mb-5">
                 LINE以外のツールで送る人は、以下のメッセージと画像を一緒に送ってね
             </p>
-            <CoppyBox>{message}</CoppyBox>
+            <CoppyBox url={messageUrl}>{message}</CoppyBox>
             <div className="sm:flex sm:justify-center text-center">
                 <Marker
                     src={`/QR/${letter.id}.svg`}

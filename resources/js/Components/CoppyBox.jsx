@@ -1,11 +1,11 @@
-import {useState} from "react"
+import { useState } from "react";
 
-export default function CoppyBox({ children }) {
+export default function CoppyBox({ children, url }) {
     const [copyed, setCopyed] = useState(false);
     const copy = () => {
         console.log(children);
         navigator.clipboard.writeText(children);
-        setCopyed(true)
+        setCopyed(true);
     };
 
     return (
@@ -13,7 +13,6 @@ export default function CoppyBox({ children }) {
             className="m-6 p-1 border-black-500 bg-white border-2 rounded relative"
             onClick={copy}
         >
-            
             <p className="absolute right-0 op-0 text-gray-600">
                 {!copyed ? (
                     <svg
@@ -35,10 +34,10 @@ export default function CoppyBox({ children }) {
                 )}
             </p>
             <div className="p-6">
-            {children}
+                {children}
+                <br />
+                <a href={url}>{url}</a>
             </div>
-            
-            
         </div>
     );
 }
